@@ -60,6 +60,62 @@
   }
 }
 
+.fixed-actions {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  z-index: 1000;
+  display: flex;
+  gap: 10px;
+}
+
+.floating-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  font: inherit;
+  font-size: 16px;
+  line-height: 1;
+  color: var(--accent);
+  background: var(--bg);
+  border: 2px solid var(--accent);
+  border-radius: 50%;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color .3s ease, color .3s ease, border-color .3s ease;
+  &:hover,
+  &:active {
+    color: var(--bg);
+    background: var(--accent);
+  }
+  @media only screen and (min-width:$cut) {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+  }
+}
+
+.icon-sun,
+.icon-moon {
+  width: 16px;
+  height: 16px;
+  @media only screen and (min-width:$cut) {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+[data-theme="dark"] .icon-sun {
+  display: none;
+}
+
+[data-theme="light"] .icon-moon {
+  display: none;
+}
+
 .header-icons {
   display: flex;
   justify-content: center;

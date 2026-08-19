@@ -1,0 +1,25 @@
+:root,
+[data-theme="dark"] {
+  --bg: #1a222c;
+  --bg-alt: #212b38;
+  --text: #cdd3db;
+  --heading: #ffffff;
+  --accent: #8ab4f8;
+}
+
+[data-theme="light"] {
+  --bg: #ffffff;
+  --bg-alt: #f4f6f8;
+  --text: #555555;
+  --heading: #333333;
+  --accent: #1a222c;
+}
+
+.section-inner {
+  width: 90%;
+  max-width: 960px;
+  margin: 0 auto;
+  @media only screen and (min-width: $cut) {
+    width: 80%;
+  }
+}

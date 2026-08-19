@@ -2,6 +2,23 @@
 document.addEventListener("DOMContentLoaded", function () {
   new SweetScroll({/* some options */});
 
+  /* dark/light theme toggle */
+  var themeToggle = document.getElementById('theme-toggle');
+  if (themeToggle) {
+    var syncThemeLabel = function () {
+      var theme = document.documentElement.getAttribute('data-theme');
+      themeToggle.setAttribute('aria-label', theme === 'light' ? 'Switch to dark mode' : 'Switch to light mode');
+    };
+    syncThemeLabel();
+    themeToggle.addEventListener('click', function () {
+      var current = document.documentElement.getAttribute('data-theme');
+      var next = current === 'light' ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', next);
+      try { localStorage.setItem('theme', next); } catch (e) {}
+      syncThemeLabel();
+    });
+  }
+
   /* particlesJS.load(@dom-id, @path-json, @callback (optional)); */
   particlesJS('particles-js', {
     "particles": {

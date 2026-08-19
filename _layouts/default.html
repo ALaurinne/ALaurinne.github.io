@@ -4,17 +4,24 @@
   <body>
       {% include header.html %}
       <section id="about">
-        {% include about.html %}
+        <div class="section-inner">
+          {% include about.html %}
+        </div>
       </section>
       <section id="dataprojects">
-        {% include dataprojects.html %}
+        <div class="section-inner">
+          {% include dataprojects.html %}
+        </div>
       </section>
       <section id="gameprojects">
-        {% include gameprojects.html %}
+        <div class="section-inner">
+          {% include gameprojects.html %}
+        </div>
       </section>
       <section id="projects">
-        {% include projects.html %}
+        <div class="section-inner">
+          {% include projects.html %}
+        </div>
       </section>
-        {{ content }}
       {% include footer.html %}
   </body>
